@@ -75,8 +75,8 @@ public class WebServiceEntityRecyclerViewAdapter extends RecyclerView.Adapter<We
             mButtonView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-//                    Intent intent = new Intent(mContext, mItem.getActivity());
-//                    mContext.startActivity(intent);
+                    Intent intent = new Intent(mContext, mItem.getActivity());
+                    mContext.startActivity(intent);
                 }
             });
         }

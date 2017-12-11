@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context="com.tactfactory.webservicetester.activities.WebServiceTesterActivity">
 
-    <activity
-        android:id="@+id/fragmentWebServiceString"
+    <fragment
+        android:id="@+id/fragmentWebServiceEntityFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:name="com.tactfactory.webservicetester.fragments.WebServiceEntityFragment"/>
