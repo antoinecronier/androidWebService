@@ -3,4 +3,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank activity</string>
+    <string name="id_label">id label</string>
+    <string name="content_label">content label</string>
+    <string name="id_value">id value</string>
+    <string name="content_value">content value</string>
+    <string name="action_refresh">Refresh</string>
 </resources>

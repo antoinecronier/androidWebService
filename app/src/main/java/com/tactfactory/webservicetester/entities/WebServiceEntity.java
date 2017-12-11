@@ -1,6 +1,9 @@
 package com.tactfactory.webservicetester.entities;
 
 import com.tactfactory.webservicetester.httpclientapache.activities.HttpClientActivity;
+import com.tactfactory.webservicetester.springrestservice.activities.SpringRestActivity;
+import com.tactfactory.webservicetester.volley1.activities.Volley1Activity;
+import com.tactfactory.webservicetester.volley2.activities.Volley2Activity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,10 +56,10 @@ public class WebServiceEntity {
         //Generate items
         List<WebServiceEntity> wsEL = new ArrayList<WebServiceEntity>();
         wsEL.add(new WebServiceEntity("httpClient Apache","", HttpClientActivity.class));
-//        wsEL.add(new WebServiceEntity("volley 1",""));
-//        wsEL.add(new WebServiceEntity("volley 2",""));
+        wsEL.add(new WebServiceEntity("volley 1","", Volley1Activity.class));
+        wsEL.add(new WebServiceEntity("volley 2","", Volley2Activity.class));
 //        wsEL.add(new WebServiceEntity("android async http",""));
-//        wsEL.add(new WebServiceEntity("spring android rest",""));
+        wsEL.add(new WebServiceEntity("spring android rest","", SpringRestActivity.class));
         return wsEL;
     }
 }
