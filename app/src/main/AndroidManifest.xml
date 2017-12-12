@@ -22,7 +22,9 @@
         <activity android:name=".httpclientapache.activities.HttpClientActivity" />
         <activity android:name=".volley1.activities.Volley1Activity" />
         <activity android:name=".volley2.activities.Volley2Activity" />
-        <activity android:name=".springrestservice.activities.SpringRestActivity"></activity>
+        <activity android:name=".springrestservice.activities.SpringRestActivity" />
+        <activity android:name=".mywstester.activities.SelectWSActivity" />
+        <activity android:name=".mywstester.activities.UseWSActivity"></activity>
     </application>
 
 </manifest>

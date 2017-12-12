@@ -1,6 +1,7 @@
 package com.tactfactory.webservicetester.entities;
 
 import com.tactfactory.webservicetester.httpclientapache.activities.HttpClientActivity;
+import com.tactfactory.webservicetester.mywstester.activities.SelectWSActivity;
 import com.tactfactory.webservicetester.springrestservice.activities.SpringRestActivity;
 import com.tactfactory.webservicetester.volley1.activities.Volley1Activity;
 import com.tactfactory.webservicetester.volley2.activities.Volley2Activity;
@@ -60,6 +61,9 @@ public class WebServiceEntity {
         wsEL.add(new WebServiceEntity("volley 2","", Volley2Activity.class));
 //        wsEL.add(new WebServiceEntity("android async http",""));
         wsEL.add(new WebServiceEntity("spring android rest","", SpringRestActivity.class));
+
+        //Tester zone
+        wsEL.add(new WebServiceEntity("My Test","", SelectWSActivity.class));
         return wsEL;
     }
 }

@@ -2,13 +2,23 @@ package com.tactfactory.webservicetester.springrestservice.fragments;
 
 import android.content.Context;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.tactfactory.webservicetester.R;
+import com.tactfactory.webservicetester.springrestservice.activities.SpringRestActivity;
+import com.tactfactory.webservicetester.springrestservice.entities.Greeting;
+
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -68,11 +78,7 @@ public class SpringRestFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_spring_rest, container, false);
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
-        }
+        new HttpRequestTask().execute();
 
         return view;
     }
@@ -114,5 +120,48 @@ public class SpringRestFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    /**
+     * A placeholder fragment containing a simple view.
+     */
+    public static class PlaceholderFragment extends Fragment {
+
+        public PlaceholderFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_spring_rest, container, false);
+            return rootView;
+        }
+    }
+
+
+    private class HttpRequestTask extends AsyncTask<Void, Void, Greeting> {
+        @Override
+        protected Greeting doInBackground(Void... params) {
+            try {
+                final String url = "http://rest-service.guides.spring.io/greeting";
+                RestTemplate restTemplate = new RestTemplate();
+                restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+                Greeting greeting = restTemplate.getForObject(url, Greeting.class);
+                return greeting;
+            } catch (Exception e) {
+                Log.e("MainActivity", e.getMessage(), e);
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Greeting greeting) {
+            TextView greetingIdText = (TextView) view.findViewById(R.id.id_value);
+            TextView greetingContentText = (TextView) view.findViewById(R.id.content_value);
+            greetingIdText.setText(greeting.getId());
+            greetingContentText.setText(greeting.getContent());
+        }
+
     }
 }

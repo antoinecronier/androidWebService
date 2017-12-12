@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tactfactory.webservicetester.mywstester.fragments.SelectWSFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/fragment_select_ws_root_api_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/root_api" />
+
+    <EditText
+        android:id="@+id/fragment_select_ws_root_api_content"
+        android:layout_below="@id/fragment_select_ws_root_api_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="10dp"
+        android:text="@string/baseUrl"
+        android:inputType="textMultiLine">
+        <requestFocus />
+    </EditText>
+
+    <ScrollView
+        android:id="@+id/fragment_select_scrollview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_select_ws_root_api_content">
+        <LinearLayout
+            android:id="@+id/fragment_select_ws_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/fragment_select_ws_btn_httpclient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/HttpClient"/>
+
+            <Button
+                android:id="@+id/fragment_select_ws_btn_volley"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Volley"/>
+
+            <Button
+                android:id="@+id/fragment_select_ws_btn_springrest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/SpringRest"/>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -8,4 +8,14 @@
     <string name="id_value">id value</string>
     <string name="content_value">content value</string>
     <string name="action_refresh">Refresh</string>
+    <string name="root_api">Root API URL</string>
+    <string name="HttpClient">Http Client</string>
+    <string name="Volley">Volley</string>
+    <string name="SpringRest">Spring Rest</string>
+    <string name="baseUrl">http://jsonplaceholder.typicode.com/</string>
+    <string name="btn_create">Create</string>
+    <string name="btn_update">Update</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_get">Get</string>
+    <string name="clearDatas">Clear Datas</string>
 </resources>
